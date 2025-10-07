@@ -4,6 +4,8 @@ extends CharacterBody2D
 const SPEED = 140.0
 const JUMP_VELOCITY = -300.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+const SWORD_SCENE = preload("res://scenes/sword.tscn")
+var can_fire = true 
 
 
 func _physics_process(delta: float) -> void:
@@ -40,3 +42,30 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	if Input.is_action_just_pressed("fire") and can_fire: 
+		launch_sword()
+		can_fire = false 
+		
+func launch_sword():
+	# Crea una instancia de la escena de la espada
+	var sword = SWORD_SCENE.instantiate()
+	
+	# Define la posición de inicio (justo al lado del personaje)
+	sword.global_position = global_position
+	
+	
+	#Define la dirección
+	if animated_sprite.flip_h: 
+		sword.direction = Vector2.LEFT
+	else:
+		sword.direction = Vector2.RIGHT
+		
+	#Ajusta la posición para que no aparezca en el centro
+	sword.global_position += sword.direction * 20
+	sword.global_position.y += -10
+	#Añade la espada al árbol de escenas.
+	get_tree().root.add_child(sword)
+	sword.sword_destroyed.connect(_on_sword_destroyed) 
+
+func _on_sword_destroyed():
+	can_fire = true

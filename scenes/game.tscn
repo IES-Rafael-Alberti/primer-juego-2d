@@ -249,7 +249,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(-13, 45)
+position = Vector2(-14, 39)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(12, -34)
@@ -384,6 +384,18 @@ theme_override_fonts/font = ExtResource("7_gee14")
 theme_override_font_sizes/font_size = 8
 text = "SPACE To JUMP "
 
+[node name="Label4" type="Label" parent="Labels"]
+offset_left = 241.0
+offset_top = -83.0
+offset_right = 312.0
+offset_bottom = -53.0
+theme_override_colors/font_color = Color(0.043137256, 0.3019608, 1, 1)
+theme_override_fonts/font = ExtResource("7_gee14")
+theme_override_font_sizes/font_size = 8
+text = "Press E to throw a SWORD"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="Label2" type="Label" parent="Labels"]
 offset_left = 586.0
 offset_top = -81.0
@@ -413,5 +425,20 @@ position = Vector2(597, 14)
 [node name="Slime" parent="Slimes" instance=ExtResource("7_u5sy4")]
 position = Vector2(693, 14)
 
+[node name="Slime3" parent="Slimes" instance=ExtResource("7_u5sy4")]
+position = Vector2(789, -35)
+
 [node name="Bottle" parent="." instance=ExtResource("11_kvpfn")]
 position = Vector2(711, -144)
+
+[node name="Slime2" parent="." instance=ExtResource("7_u5sy4")]
+position = Vector2(181, 93)
+
+[node name="Slime3" parent="." instance=ExtResource("7_u5sy4")]
+position = Vector2(260, 93)
+
+[node name="Slime4" parent="." instance=ExtResource("7_u5sy4")]
+position = Vector2(501, -35)
+
+[node name="Slime5" parent="." instance=ExtResource("7_u5sy4")]
+position = Vector2(277, -34)

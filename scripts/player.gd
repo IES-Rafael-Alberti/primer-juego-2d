@@ -76,6 +76,7 @@ func launch_sword():
 
 func _on_sword_destroyed():
 	can_fire = true
+	flash_ready()
 	
 func damage(vector):
 	flash_damage()
@@ -96,7 +97,13 @@ func flash_damage():
 	var tween = create_tween()
 	tween.tween_property(sprite_material, "shader_parameter/flash_strength", 1.0, 0.05)
 	tween.tween_property(sprite_material, "shader_parameter/flash_strength", 0.0, 0.2)
-
+func flash_ready():
+	if not sprite_material:
+		return
+	var tween = create_tween()
+	tween.tween_property(sprite_material, "shader_parameter/ready_strength", 1.0, 0.05)
+	tween.tween_property(sprite_material, "shader_parameter/ready_strength", 0.0, 0.2)
+	
 func _on_timer_timeout():
 	Engine.time_scale = 1
 	get_tree().reload_current_scene()

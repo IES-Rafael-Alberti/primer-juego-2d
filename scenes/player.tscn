@@ -1,7 +1,16 @@
-[gd_scene load_steps=26 format=3 uid="uid://cu3qmef5tm6lj"]
+[gd_scene load_steps=29 format=3 uid="uid://cu3qmef5tm6lj"]
 
 [ext_resource type="Texture2D" uid="uid://caahxfvoufvst" path="res://sprites/knight.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cjuhm78s78joc" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Shader" uid="uid://qpk0i2ph7jno" path="res://shaders/damage.gdshader" id="1_qhqgy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dqkch"]
+shader = ExtResource("1_qhqgy")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qhqgy"]
+shader = ExtResource("1_qhqgy")
+shader_parameter/flash_strength = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_4flbx")
@@ -173,10 +182,12 @@ radius = 5.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
+material = SubResource("ShaderMaterial_dqkch")
 collision_layer = 2
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_qhqgy")
 position = Vector2(1, -13)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
 animation = &"jump"
@@ -185,3 +196,7 @@ autoplay = "run"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -6)
 shape = SubResource("CircleShape2D_1jxqw")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

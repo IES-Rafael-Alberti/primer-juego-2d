@@ -1,6 +1,7 @@
 extends Node
 
 const BOTTLE = 20
+
 var score = 0
 @onready var score_label: Label = $ScoreLabel
 @onready var score_label_2: Label = $ScoreLabel2

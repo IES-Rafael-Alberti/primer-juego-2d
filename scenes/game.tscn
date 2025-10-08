@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cdkq0vabxpwnj"]
+[gd_scene load_steps=19 format=3 uid="uid://cdkq0vabxpwnj"]
 
 [ext_resource type="Script" uid="uid://dwnh5e72p5vvx" path="res://scripts/game_manager.gd" id="1_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://cu3qmef5tm6lj" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://qffbaxvbefdk" path="res://scenes/slime.tscn" id="7_u5sy4"]
 [ext_resource type="FontFile" uid="uid://76mam0d3uvpn" path="res://fonts/PixelOperator8-Bold.ttf" id="9_vtaks"]
 [ext_resource type="PackedScene" uid="uid://deo1e8mmmpqhk" path="res://scenes/bottle.tscn" id="11_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://cusqbvcal21mv" path="res://scenes/hud.tscn" id="12_dinhu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -456,3 +457,5 @@ position = Vector2(711, -144)
 
 [node name="Slime" parent="." instance=ExtResource("7_u5sy4")]
 position = Vector2(8, 30)
+
+[node name="HUD" parent="." instance=ExtResource("12_dinhu")]

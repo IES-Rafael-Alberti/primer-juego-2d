@@ -6,11 +6,13 @@ const JUMP_VELOCITY = -300.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 const SWORD_SCENE = preload("res://scenes/sword.tscn")
 var can_fire = true 
-const LIFE = 2
-var actualLife = 2
+const LIFE = 3
+var actualLife = 3
 @onready var timer: Timer = $Timer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var sprite_material: ShaderMaterial = $AnimatedSprite2D.material
+@onready var hp_bar: ProgressBar = $HPBar
+@onready var hp_timer: Timer = $HPTimer
 
 
 func _physics_process(delta: float) -> void:
@@ -77,12 +79,14 @@ func _on_sword_destroyed():
 	
 func damage(vector):
 	flash_damage()
+	actualLife -= 1
+	hp_bar.value = actualLife
+	hp_bar.visible = true
+	hp_timer.start()
 	if actualLife == 0:
 		Engine.time_scale = 0.5
 		timer.start()
 		collision_shape_2d.queue_free()
-	else:
-		actualLife -= 1
 	var knockback = 400
 	velocity.x = -vector.x * knockback
 	velocity.y = -250 
@@ -96,3 +100,7 @@ func flash_damage():
 func _on_timer_timeout():
 	Engine.time_scale = 1
 	get_tree().reload_current_scene()
+
+
+func _on_hp_timer_timeout() -> void:
+	hp_bar.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cu3qmef5tm6lj"]
+[gd_scene load_steps=30 format=3 uid="uid://cu3qmef5tm6lj"]
 
 [ext_resource type="Texture2D" uid="uid://caahxfvoufvst" path="res://sprites/knight.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cjuhm78s78joc" path="res://scripts/player.gd" id="1_g2els"]
@@ -182,6 +182,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jxqw"]
 radius = 5.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhqgy"]
+bg_color = Color(0.7411765, 0.14117648, 0, 1)
+border_blend = true
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
 material = SubResource("ShaderMaterial_dqkch")
@@ -201,4 +209,20 @@ shape = SubResource("CircleShape2D_1jxqw")
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="HPBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -11.0
+offset_top = -26.0
+offset_right = 12.0
+offset_bottom = -20.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_qhqgy")
+max_value = 3.0
+step = 1.0
+value = 3.0
+show_percentage = false
+
+[node name="HPTimer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="HPTimer" to="." method="_on_hp_timer_timeout"]

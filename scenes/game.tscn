@@ -177,7 +177,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iywne"]
-distance = 12.0
+distance = -127.0
 
 [sub_resource type="Animation" id="Animation_lbhrr"]
 length = 0.001

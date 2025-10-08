@@ -7,15 +7,15 @@ var score = 0
 
 func add_point():
 	score += 1
-	score_label.text = "You collected " + str(score) + " coins."
+	score_label.text = "Has tomado " + str(score) + " Monedas."
 	if score != BOTTLE:
-		score_label_2.text = "Feel like a drink? Sadly, you’re short " +  str(BOTTLE - score) + " coins :("
+		score_label_2.text = "¿Te apetece una bebida? Una pena que te falten " +  str(BOTTLE - score) + " monedas :("
 	else:
-		score_label_2.text = "Feel like a drink? It costs 20 coins. Go on, treat yourself :)"
+		score_label_2.text = "¿Te apetece una bebida? Cuesta 20 monedas. Para algo has tomado todas esas monedas, ¿no? :)"
 		
 func drink():
 	if BOTTLE - score == 0:
-		score_label_2.text = "Enjoy! Drink responsibly :)"
+		score_label_2.text = "Disfrutala! Pero bebe responsablemente :)"
 		return true
 	else:
 		return false

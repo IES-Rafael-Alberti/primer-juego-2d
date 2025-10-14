@@ -9,6 +9,8 @@ var direction = 1
 @onready var floor_check_right: RayCast2D = $FloorCheckRight
 @onready var timer: Timer = $CollisionShape2D/Timer
 @onready var enemy_check_up: RayCast2D = $EnemyCheckUp
+@onready var area_2d: Area2D = $Area2D
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -26,6 +28,10 @@ func _process(delta: float) -> void:
 	position.x += direction * SPEED * delta
 	
 func killable():
+	set_process(false)
+	area_2d.queue_free()
+	animated_sprite_2d.play("death")
+	await animated_sprite_2d.animation_finished
 	queue_free()
 	
 func _on_body_entered(body: Node2D):

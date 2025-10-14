@@ -77,8 +77,11 @@ func launch_sword():
 func _on_sword_destroyed():
 	can_fire = true
 	flash_ready()
-	
-func damage(vector):
+func nockback():
+	var knockback = 400
+	velocity.x =  knockback
+	velocity.y = -250 
+func damage():
 	flash_damage()
 	actualLife -= 1
 	hp_bar.value = actualLife
@@ -88,9 +91,7 @@ func damage(vector):
 		Engine.time_scale = 0.5
 		timer.start()
 		collision_shape_2d.queue_free()
-	var knockback = 400
-	velocity.x = -vector.x * knockback
-	velocity.y = -250 
+	nockback()
 func flash_damage():
 	if not sprite_material:
 		return

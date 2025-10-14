@@ -43,7 +43,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2gj0"]
-size = Vector2(14, 13)
+size = Vector2(14, 11)
 
 [node name="Slime" type="CharacterBody2D"]
 collision_mask = 2
@@ -73,14 +73,15 @@ target_position = Vector2(-14, 14)
 [node name="FloorCheckRight" type="RayCast2D" parent="."]
 target_position = Vector2(13, 14)
 
-[node name="FloorCheckUp" type="RayCast2D" parent="."]
+[node name="EnemyCheckUp" type="RayCast2D" parent="."]
 target_position = Vector2(0, -12)
+collision_mask = 3
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 4.5)
+position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_p2gj0")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

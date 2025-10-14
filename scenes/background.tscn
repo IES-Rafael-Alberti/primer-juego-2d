@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://s7kbc6kyy6tc"]
+
+[ext_resource type="Texture2D" uid="uid://dvr0l8wfdqy2i" path="res://sprites/parallax-forest-back-trees.png" id="1_cbsqf"]
+[ext_resource type="Texture2D" uid="uid://qkjdps54stgm" path="res://sprites/parallax-forest-lights.png" id="2_wisxt"]
+[ext_resource type="Texture2D" uid="uid://di3x3s5p6f6fy" path="res://sprites/parallax-forest-middle-trees.png" id="3_wax1t"]
+[ext_resource type="Texture2D" uid="uid://h7o6mpjijij5" path="res://sprites/parallax-forest-front-trees.png" id="4_1tmhi"]
+
+[node name="Background" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(600, 350)
+transform = Transform2D(1, 0, 0, 1, 600, 350)
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0)
+motion_mirroring = Vector2(272, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("1_cbsqf")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0)
+motion_mirroring = Vector2(272, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("2_wisxt")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0)
+motion_mirroring = Vector2(272, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("3_wax1t")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0)
+motion_mirroring = Vector2(272, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("4_1tmhi")

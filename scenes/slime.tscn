@@ -73,6 +73,9 @@ target_position = Vector2(-14, 14)
 [node name="FloorCheckRight" type="RayCast2D" parent="."]
 target_position = Vector2(13, 14)
 
+[node name="FloorCheckUp" type="RayCast2D" parent="."]
+target_position = Vector2(0, -12)
+
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2
 

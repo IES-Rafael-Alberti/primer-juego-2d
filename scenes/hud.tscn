@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cusqbvcal21mv"]
+[gd_scene load_steps=0 format=3 uid="uid://cusqbvcal21mv"]
 
 [node name="HUD" type="CanvasLayer"]
 

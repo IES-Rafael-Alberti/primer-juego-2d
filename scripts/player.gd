@@ -52,6 +52,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("fire") and can_fire: 
 		launch_sword()
 		can_fire = false 
+
 		
 func launch_sword():
 	# Crea una instancia de la escena de la espada

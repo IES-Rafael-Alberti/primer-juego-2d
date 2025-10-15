@@ -6,6 +6,11 @@ var score = 0
 @onready var score_label: Label = $cajatextoAlt/ScoreLabel
 @onready var score_label_2: Label = $cajatextoAlt2/ScoreLabel2
 
+
+func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		get_tree().paused = !get_tree().paused
+
 func add_point():
 	score += 1
 	score_label.text = "Has tomado " + str(score) + " Monedas."
@@ -20,3 +25,4 @@ func drink():
 		return true
 	else:
 		return false
+		

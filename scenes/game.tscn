@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cdkq0vabxpwnj"]
+[gd_scene load_steps=22 format=3 uid="uid://cdkq0vabxpwnj"]
 
 [ext_resource type="Script" uid="uid://dwnh5e72p5vvx" path="res://scripts/game_manager.gd" id="1_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://cu3qmef5tm6lj" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -14,6 +14,7 @@
 [ext_resource type="FontFile" uid="uid://76mam0d3uvpn" path="res://fonts/PixelOperator8-Bold.ttf" id="9_vtaks"]
 [ext_resource type="PackedScene" uid="uid://c212koc7iissu" path="res://scenes/cajatexto.tscn" id="10_kvuet"]
 [ext_resource type="PackedScene" uid="uid://deo1e8mmmpqhk" path="res://scenes/bottle.tscn" id="11_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://yjwxkn0vya7e" path="res://scenes/pausa.tscn" id="15_ir15t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -516,3 +517,5 @@ position = Vector2(277, -34)
 
 [node name="Bottle" parent="." instance=ExtResource("11_kvpfn")]
 position = Vector2(711, -144)
+
+[node name="Pausa" parent="." instance=ExtResource("15_ir15t")]

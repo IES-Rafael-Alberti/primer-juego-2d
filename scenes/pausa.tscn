@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://yjwxkn0vya7e"]
+
+[ext_resource type="FontFile" uid="uid://76mam0d3uvpn" path="res://fonts/PixelOperator8-Bold.ttf" id="1_1vvwb"]
+[ext_resource type="Script" uid="uid://cbx354gf3rllu" path="res://scripts/pausa.gd" id="1_k5nbw"]
+[ext_resource type="FontFile" uid="uid://cahgg7rygrm2q" path="res://fonts/PixelOperator8.ttf" id="2_k5nbw"]
+
+[node name="Pausa" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_k5nbw")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_right = 1157.0
+offset_bottom = 656.0
+
+[node name="Label" type="Label" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 71.0
+offset_right = 748.0
+offset_bottom = 135.0
+theme_override_fonts/font = ExtResource("1_1vvwb")
+theme_override_font_sizes/font_size = 63
+text = "PAUSA"
+
+[node name="Button" type="Button" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 230.0
+offset_right = 749.0
+offset_bottom = 392.0
+theme_override_fonts/font = ExtResource("2_k5nbw")
+theme_override_font_sizes/font_size = 32
+text = "CONTINUAR"
+
+[node name="Button2" type="Button" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 444.0
+offset_top = 443.0
+offset_right = 747.0
+offset_bottom = 596.0
+theme_override_fonts/font = ExtResource("2_k5nbw")
+theme_override_font_sizes/font_size = 32
+text = "SALIR"
+
+[connection signal="pressed" from="Control/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Panel/Button2" to="." method="_on_button_close_pressed"]

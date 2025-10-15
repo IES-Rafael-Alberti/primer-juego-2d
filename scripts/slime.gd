@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 func killable():
 	set_process(false)
 	area_2d.queue_free()
+	collision_shape_2d.queue_free()
 	animated_sprite_2d.play("death")
 	await animated_sprite_2d.animation_finished
 	queue_free()

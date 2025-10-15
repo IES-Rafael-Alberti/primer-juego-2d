@@ -3,8 +3,8 @@ extends Node
 const BOTTLE = 20
 
 var score = 0
-@onready var score_label: Label = $ScoreLabel
-@onready var score_label_2: Label = $ScoreLabel2
+@onready var score_label: Label = $cajatextoAlt/ScoreLabel
+@onready var score_label_2: Label = $cajatextoAlt2/ScoreLabel2
 
 func add_point():
 	score += 1

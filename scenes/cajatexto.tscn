@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c212koc7iissu"]
+
+[ext_resource type="Texture2D" uid="uid://kujpd60tsmds" path="res://sprites/labels.png" id="1_pxs63"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk3cf"]
+atlas = ExtResource("1_pxs63")
+region = Rect2(0, -0.40580082, 46, 10.850982)
+
+[node name="cajatextoMarron" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.1500001
+anchor_bottom = 0.245
+offset_right = 53.999996
+offset_bottom = 12.2
+texture = SubResource("AtlasTexture_qk3cf")
